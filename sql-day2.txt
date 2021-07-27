@@ -28,3 +28,4 @@ INSERT INTO Employee values(105,'Raman','Mahadev','10-DEC-2005',103,47250,20);
 INSERT INTO Employee values(106,'Dev','Mishra','07-JULY-2015',100,24150,30);
 
 INSERT INTO Employee values(108,'Edin','Brew','04-NOV-2019',NULL,15900,NULL);
+INSERT INTO Employee values(108,'Edin','Brew','04-NOV-2019',NULL,15900,NULL);
