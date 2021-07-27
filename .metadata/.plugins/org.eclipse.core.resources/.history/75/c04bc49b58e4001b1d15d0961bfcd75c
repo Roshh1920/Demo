@@ -1,0 +1,56 @@
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Insertdemo {
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter ProductDetails");
+	System.out.println("ProdID");
+	int ProdID= sc.nextInt();
+	System.out.println("Prod Name");
+	String ProdName= sc.next();
+	System.out.println("Category");
+	String Category= sc.next();
+	System.out.println("Price");
+	int Price= sc.nextInt();
+
+	try {
+   	 //load a driver
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		//establishing a connection with DB
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","hr","hr");
+		
+		Statement stmt= con.createStatement();
+		String qry="insert into ProductInfo values("+ProdID+",'"+ProdName+"',"+Category+",'"+Price+"')";
+	    stmt.executeUpdate(qry);
+		//it is difficult to write so use below statement
+		
+		/*
+		PreparedStatement ps= con.prepareStatement("insert into ProductInfo values(?,?,?,?)");
+	    ps.setInt(1, ProdID);
+	    ps.setString(2, ProdName);
+	    ps.setString(3, Category);
+	    ps.setInt(4, Price);
+	    
+	    ps.executeUpdate();
+		    
+    */    
+		System.out.println("Data Saved Successfully...");
+
+    } catch (ClassNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+    catch(SQLException e)
+    {
+   	 //e.printStackTrace();
+   	 System.out.println("ProductID Existing...");
+    }
+}
+}

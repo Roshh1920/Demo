@@ -1,0 +1,13 @@
+package day3;
+
+
+public class sbuffer {
+
+	public static void main(String[] args) {
+		StringBuffer sb=new StringBuffer("Mask");
+		
+		System.out.println(sb+"/"+sb.reverse());
+
+	}
+
+}

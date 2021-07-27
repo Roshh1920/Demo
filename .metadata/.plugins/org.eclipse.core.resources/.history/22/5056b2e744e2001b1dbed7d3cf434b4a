@@ -1,0 +1,8 @@
+package assignment1;
+
+public class Currentaccount extends Account {
+	int overdraftLimitAccount=2000;
+	public void show_current_account() {
+		System.out.println(" Over draft Limit Account " + overdraftLimitAccount);
+	}
+}

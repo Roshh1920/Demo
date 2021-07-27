@@ -1,0 +1,14 @@
+package assignment1;
+
+
+
+public class setbankdetails {
+	Account setdetails() {
+		Account acc=new Account(27625, 150000f, "123@Pass", null);
+		return acc;
+	}
+		
+	
+}
+
+

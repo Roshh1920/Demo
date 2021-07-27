@@ -1,0 +1,8 @@
+package assignment1;
+
+public class Cricket {
+	int balls[]= new int[6];
+	int over[] = new int[5];
+	
+	
+}

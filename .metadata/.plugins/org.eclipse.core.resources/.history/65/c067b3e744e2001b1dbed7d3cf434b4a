@@ -1,0 +1,9 @@
+package assignment1;
+
+public class Savingsaccount extends Account{
+	int minimumbalance = 0;
+	
+	public void show_savings_account() {
+		System.out.println("Minimum Balance" + minimumbalance);
+	}
+}

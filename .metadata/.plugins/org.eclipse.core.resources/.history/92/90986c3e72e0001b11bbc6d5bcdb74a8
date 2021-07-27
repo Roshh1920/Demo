@@ -1,0 +1,21 @@
+package Daytwo;
+
+public class wrapper {
+
+	public static void main(String[] args) {
+		int  num =100;
+		Integer n=new Integer(num);
+		Integer m=num;  // Autoboxing
+		int x =n.intValue(); //unwrapping //unboxing
+		
+		System.out.println(n);
+		String num ="1000";
+		
+		int n = Integer.parseInt(num);
+		
+		System.out.println();
+				
+		
+	}
+	
+}

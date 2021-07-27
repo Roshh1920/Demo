@@ -1,0 +1,11 @@
+package assignment1;
+
+public class BDetail {
+public static void main(String[] args) {
+		
+		Account account = new Account();
+		BDetail bankDetail = new BDetail(656200, 150000, "123@Pass");
+		
+		System.out.print(account.displayAccount(bankDetail));
+
+}

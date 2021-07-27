@@ -1,0 +1,24 @@
+package day3;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class prac {
+	List getNames(String input ) {
+		List ar=new ArrayList();
+		ar.add(input);
+		
+		StringTokenizer arr = new StringTokenizer(input,",");
+		while(arr.hasMoreTokens())
+		{
+			System.out.println(arr.nextToken().charAt(0));
+		}
+		
+		
+		return ar;
+	}
+public static void main(String[] args) {
+	String input="ram,rahim,robert,farhan,aditi,reshma";
+	System.out.println(new prac().getNames(input));
+}
+}

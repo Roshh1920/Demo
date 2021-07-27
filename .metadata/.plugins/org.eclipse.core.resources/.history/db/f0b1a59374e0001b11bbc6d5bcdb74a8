@@ -1,0 +1,12 @@
+package Daytwo;
+
+public class wrapperdemo {
+	public static void main() {
+	char no ='7';
+	
+	int result= Integer.parseUnsignedInt(no);
+	//int  result =0;
+	//Integer n=new Integer(r);
+	System.out.println(result);
+	}
+}

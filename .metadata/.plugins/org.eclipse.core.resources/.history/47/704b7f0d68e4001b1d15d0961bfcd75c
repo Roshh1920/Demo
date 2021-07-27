@@ -1,0 +1,39 @@
+package jdbc;
+import java.sql.*;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class metadate {
+public static void main(String[] args) {
+	
+
+	try {
+   	 //load a driver
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	//establishing a connection with DB
+	Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","hr","hr");
+	
+	DatabaseMetaData dbs=con.getMetaData();
+	System.out.println(dbs.getDriverName());
+	System.out.println(dbs.getURL());
+	System.out.println(dbs.getUserName());
+	
+	Statement stmt = con.createStatement();
+	ResultSet rs = stmt.executeQuery("Select * from ProductInfo");
+	ResultSetMetaData rst = rs.getMetaData();
+	System.out.println(rst.getColumnName(1));
+	System.out.println(rst.getColumnTypeName(1));
+	System.out.println(rst.getColumnCount());
+	
+	} catch (ClassNotFoundException e) {
+	e.printStackTrace();
+}
+catch(SQLException e)
+{
+	System.out.println(e);
+}
+}
+
+}

@@ -1,0 +1,15 @@
+package day1;
+
+public class MainStudent {
+
+	 public static void main(String[] args) {
+
+	        Student stud=null;
+	        SetStudent get=new SetStudent();
+	        stud=get.setStudent();        
+	        display disp=new display();
+	        disp.display(stud);
+	    }
+	 
+	
+}

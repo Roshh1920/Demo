@@ -1,0 +1,18 @@
+package day1;
+
+
+public class App {
+		public static void main(String[] args){
+			Scenario1();
+			Scenario2();
+			Scenario3();
+		}
+		
+		public class Scenario1{
+			 Student stud=null;
+			display disp=new display();
+	        disp.display(stud);
+		}
+		
+	 
+}

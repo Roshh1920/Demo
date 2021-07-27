@@ -1,0 +1,59 @@
+package assignment1;
+
+import com.encap.StudentVo;
+import com.encap.displaystudent;
+
+public class Account {
+   private int accountNo;
+   private float accountBalance;
+   private String accountPassword;
+   private String bankname;
+public int getAccountNo() {
+	return accountNo;
+}
+public void setAccountNo(int accountNo) {
+	this.accountNo = accountNo;
+}
+public float getAccountBalance() {
+	return accountBalance;
+}
+public void setAccountBalance(float accountBalance) {
+	this.accountBalance = accountBalance;
+}
+public String getAccountPassword() {
+	return accountPassword;
+}
+public void setAccountPassword(String accountPassword) {
+	this.accountPassword = accountPassword;
+}
+public String getBankname() {
+	return bankname;
+}
+public Account(int accountNo, float accountBalance, String accountPassword, String bankname) {
+	super();
+	this.accountNo = accountNo;
+	this.accountBalance = accountBalance;
+	this.accountPassword = accountPassword;
+	this.bankname = bankname;
+}
+public void setBankname(String bankname) {
+	this.bankname = bankname;
+}
+public Account() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
+void display(Account acc)
+{
+	Account acc=new Account();
+	//displaystudent disp=new displaystudent();
+    //disp.display(svo);
+    System.out.println("Account Info is ");
+    System.out.println("Sid "+ acc.getAccountNo());
+    System.out.println("Name "+ acc.getAccountBalance());
+    System.out.println("Age"+ acc.getAccountPassword());
+    System.out.println("Gender "+ acc.getBankname());
+}
+	
+}

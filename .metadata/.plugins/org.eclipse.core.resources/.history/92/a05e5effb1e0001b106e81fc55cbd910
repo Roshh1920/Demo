@@ -1,0 +1,30 @@
+package day1;
+
+
+public class App {
+		public static void main(String[] args){
+			Scenario1();
+			Scenario2();
+			//Scenario3();
+		}
+		
+		public class Scenario1{
+			 Student student=null;
+			display disp=new display();
+	        disp.display(student);
+		}
+		
+		public class Scenario2{
+			Student e[]=new Student[3];
+
+	        e[0]=new Student("", "Jack", "Oak");
+	        e[1]=new Student("E002", "Dev", "Mum");
+	        e[2]=new Student("E003","Rishi","Chn");
+
+	        for(int x=0;x<e.length;x++)
+	        {
+	            System.out.println(e[x]);
+	        }
+		}
+		
+}

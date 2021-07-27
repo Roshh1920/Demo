@@ -1,0 +1,19 @@
+package assignment1;
+
+
+
+public class Main {
+public static void main(String[] args) {
+		
+		Account acc = null;
+		setbankdetails s= new setbankdetails();
+		acc=s.setdetails();
+		
+
+		acc.display(acc);
+		
+		
+		
+}
+
+}

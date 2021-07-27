@@ -1,0 +1,42 @@
+package Daytwo;
+import java.util.Scanner;  
+public class Array {
+
+	public static void main(String[] args)   
+	{  
+	
+	int n;
+	
+	Scanner sc=new Scanner(System.in);  
+	System.out.println("Enter the number of elements of the array: ");  
+	n=sc.nextInt();  
+	 
+	int[] array = new int[15];  
+	System.out.println("Enter the elements of the array: ");  
+	for(int i=0; i<n; i++)  
+	{  
+	array[i]=sc.nextInt();  
+	}  
+	
+	int flag = 0;
+    while(n!=0) {
+        int num1 = n%10;
+        int num2 = (n/10)%10;
+        if(num1-num2<0)
+            {
+            System.out.println(false);
+            flag=1;
+            }
+        n=n/10;
+    }
+    if(flag==0)
+    System.out.println(true);
+
+	
+			
+		 
+	  
+	}  
+	}  
+  
+

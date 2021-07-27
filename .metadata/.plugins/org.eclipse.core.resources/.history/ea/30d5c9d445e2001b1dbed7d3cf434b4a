@@ -1,0 +1,25 @@
+package assignment1;
+
+
+
+public class Main {
+public static void main(String[] args) {
+		System.out.println("----------Assignment 1-------------");
+		Account acc = null;
+		setbankdetails s= new setbankdetails();
+		acc=s.setdetails();
+		acc.display(acc);
+		System.out.println("----------Assignment 2-------------");
+		Savingsaccount sa = new Savingsaccount();
+		sa.show_savings_account();
+		sa.display(acc);
+		Currentaccount ca = new Currentaccount();
+		ca.display(acc);
+		ca.show_current_account();
+		sa.withdraw(500);
+		ca.withdraw(200);
+		
+		
+}
+
+}

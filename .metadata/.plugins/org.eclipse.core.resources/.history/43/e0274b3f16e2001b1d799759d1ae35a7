@@ -1,0 +1,49 @@
+package assignment1;
+import java.util.Scanner;
+
+public class Cricket {
+	int balls[] = new int[30];
+	int[] freq = new int[30];
+	int count,s=0;
+	Scanner sc = new Scanner(System.in); 
+	
+	 void inningstatistics() {
+		 System.out.println("Enter runs");
+		 for(int i=0;i<30;i++){
+			 balls[i]=sc.nextInt();
+			 s+=balls[i];
+			 }
+	 }
+	 
+	
+	 
+/*	 void count() {
+		 int k;
+		 for( k=0;k<30;k++) {
+			 count=1;
+			 for(int j=k+1;j<30;j++) {
+				 if(balls[k]==balls[j]) {
+					freq[j]=0; 
+				 }
+			 }
+		 }
+		 if(freq[k]!=0) {
+			 freq[k]=count;
+		 }
+		 for(int i=0;i<30;i++) {
+				if(freq[i]!=0) {
+			System.out.println(balls[i]+ "  : " + freq[k]+ " times ");
+			}
+	 }
+	 }
+	 */
+	 public static void main(String[] args) {
+		Cricket c= new Cricket();
+		c.inningstatistics();
+		System.out.println("Total Runs Scored: ");
+		//c.count();
+		
+		}
+	
+	
+}

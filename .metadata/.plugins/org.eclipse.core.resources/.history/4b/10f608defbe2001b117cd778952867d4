@@ -1,0 +1,18 @@
+package day3;
+import java.util.*;
+
+public class set {
+
+	public static void main(String[] args) {
+		String input= "apple";
+		Set s = new TreeSet();
+		char[] ch=input.toCharArray();
+		s.add(ch);
+	
+		for(Object obj : s) {
+			System.out.println(obj);
+		}
+
+	}
+
+}

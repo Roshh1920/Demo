@@ -1,0 +1,46 @@
+package day2;
+import java.sql.*;
+import java.util.List;
+
+public class StudentDAO
+{
+        Connection con;
+        StudentDAO()
+        {
+            // Set Connection
+        	try {
+        		Class.forName("oracle.jdbc.driver.OracleDriver");   //Load Driver
+        		//Establishing connection with database
+        		
+        			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521: XE","hr","hr");
+        	}
+
+   		 catch (SQLException e) {
+   			e.printStackTrace();
+   		}
+   			
+        	catch (ClassNotFoundException e) {
+        		e.printStackTrace();
+        	}
+        }
+        boolean addStudent(Student s)
+        {
+            //save student to db
+        	PreparedStatement ps= con.prepareStatement("insert into Student values(?,?,?,?)");
+    	    ps.setInt(1, ProdID);
+    	    ps.setString(2, ProdName);
+    	    ps.setString(3, Category);
+    	    ps.setInt(4, Price);
+    	    
+            return false;
+        }
+        List<Student> getStudents()
+        {
+            //get all student data, store them in List and return
+            return null;
+        }
+boolean addCourse(Course s) {
+	return false;
+}
+
+}

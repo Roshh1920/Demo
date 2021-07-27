@@ -1,0 +1,14 @@
+package jdbc;
+
+import java.util.Scanner;
+
+public class Insertdemo {
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter ProductDetails");
+	System.out.println("ProdID");
+	int ProdID= sc.nextInt();
+	System.out.println("Prod Name");
+	String ProdName= sc.next();
+}
+}

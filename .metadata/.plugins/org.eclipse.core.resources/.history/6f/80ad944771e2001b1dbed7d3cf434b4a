@@ -1,0 +1,44 @@
+package day2;
+import java.util.Scanner;
+public class AppEngine 
+{
+
+      public Course[] introduce(Course course[]) 
+      {
+          //Read Course details from the user ,
+    	  
+          //add Course Object to the array and return 
+
+        return null; 
+      }
+ 
+      public Student[] register(Student student[],int pos)
+      { 
+          //Read Student details from the user ,
+          //add Student Object to the array and return 
+
+        return null; 
+      }
+ 
+      public void listOfStudents(Student[] students)
+      { 
+          //Display the students array passed as arguments
+      }
+
+      public void listOfCourses(Course[] courses,int pos)
+      {
+        //Display the courses array passed as arguments
+      }
+
+      public Enroll[] enroll(Enroll[] enrollments , Student[] student, Course[] course,int pos)
+      {
+        // Add the Student and Course to enrollment array and return  
+        return null;
+
+      }
+ 
+      public void listOfEnrollments(Enroll[] enrollments) 
+      {
+        //Display the enrollment array passed as arguments
+      }
+}

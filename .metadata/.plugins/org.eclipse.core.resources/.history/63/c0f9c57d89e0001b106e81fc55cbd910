@@ -1,0 +1,11 @@
+package Daytwo;
+
+public class wrapperdemo {
+	public static void main(String[] args) {
+	char no ='7';
+
+    int result = 0;
+    int x = Integer.parseInt(String.valueOf(no));   
+    System.out.println(result);
+	}
+}

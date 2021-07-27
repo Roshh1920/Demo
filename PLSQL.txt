@@ -1,0 +1,244 @@
+SET SERVEROUTPUT ON;
+DECLARE
+	fName VARCHAR2(20);
+BEGIN
+	select FirstName INTO fName FROM Employee where empno=103;
+	DBMS_OUTPUT.PUT_LINE('Name is' || fName);
+END;
+/
+
+
+SET SERVEROUTPUT ON;
+DECLARE
+	fName VARCHAR2(20);
+	lname VARCHAR2(20);
+	sal number;
+BEGIN
+	select FirstName,Lastname,SALARY INTO fName,lname,sal FROM Employee where empno=106;
+	DBMS_OUTPUT.PUT_LINE('Name is ' || fName);
+	DBMS_OUTPUT.PUT_LINE('LastName is ' || lname);
+	DBMS_OUTPUT.PUT_LINE('Salary is ' || sal);
+END;
+/
+
+%Type Attribute
+----------------------------
+
+SET SERVEROUTPUT ON;
+DECLARE
+	fName Employee.LastName%TYPE;
+	sal Employee.Salary%TYPE;
+	newsal sal%TYPE;
+BEGIN
+	select FirstName,SALARY INTO fName,sal FROM Employee where empno=106;
+	newsal:= sal*1.10;
+	DBMS_OUTPUT.PUT_LINE('Name is ' || fName);
+	DBMS_OUTPUT.PUT_LINE('Salary is ' || sal);
+	DBMS_OUTPUT.PUT_LINE('New Salary is ' || newsal);
+END;
+/
+
+DECLARE
+	sal Employee.salary%TYPE;
+BEGIN
+	select salary INTO sal from Employee where empno=108;
+	IF sal>7000 THEN
+		DBMS_OUTPUT.PUT_LINE('Good');
+	ELSIF sal BETWEEN 50000 AND 70000 THEN 
+		DBMS_OUTPUT.PUT_LINE('Average');
+	ELSE
+		DBMS_OUTPUT.PUT_LINE('Improper');
+	END If;
+END;
+/		
+
+DECLARE
+	sal Employee.salary%TYPE;
+BEGIN
+	select salary INTO sal from Employee where empno=108;
+	IF sal>7000 THEN
+		DBMS_OUTPUT.PUT_LINE('Good');
+	ELSE
+		DBMS_OUTPUT.PUT_LINE('Improper');
+	END If;
+END;
+/		
+
+
+DECLARE
+	grade CHAR(1):=UPPER('&vgrade');
+	rating varchar2(20);
+BEGIN
+	rating := CASE grade
+	WHEN 'A' THEN 'Excellent'
+	WHEN 'B' THEN 'Good'
+	WHEN 'C' THEN 'Average'
+	ELSE 'Poor' END;
+	DBMS_OUTPUT.PUT_LINE(' Grade ' || grade ||' having rating ' || rating);
+END;
+/
+
+
+
+Basic Loop
+-------------------
+DECLARE
+        num NUMBER :=1;
+    BEGIN
+        LOOP
+            DBMS_OUTPUT.PUT_LINE(num);
+            num:=num+1;
+        EXIT WHEN num>10;
+        END LOOP;
+    END;
+    /
+
+While loop
+------------------
+DECLARE
+        num NUMBER :=1;
+    BEGIN
+        WHILE num<=10 LOOP
+            DBMS_OUTPUT.PUT_LINE(num);
+            num:=num+1;
+        END LOOP;
+    END;
+    /
+
+For loop
+-------------------
+ BEGIN
+        FOR num IN 1..10 LOOP
+            DBMS_OUTPUT.PUT_LINE(num);
+        END LOOP;
+    END;
+    /
+
+DECLARE
+        num NUMBER :=1;
+	fName Employee.FirstName%TYPE;
+	sal Employee.Salary%TYPE;
+    BEGIN
+	select salary INTO sal from Employee where empno=108;FOR empno IN 105..110 LOOP
+            DBMS_OUTPUT.PUT_LINE(num);
+        END LOOP;
+    END;
+    /
+
+DECLARE
+        num NUMBER :=1;
+    BEGIN
+        WHILE <=10 LOOP
+            DBMS_OUTPUT.PUT_LINE(num);
+            num:=num+1;
+        END LOOP;
+    END;
+    /
+
+
+DECLARE
+    fname employee.firstname%type;
+    sal employee.salary%type;
+BEGIN
+    FOR num IN 100..110 LOOP
+        begin
+        select firstname,salary into fname,sal from employee where empno=num;
+        exception
+                   when no_data_found then
+                 dbms_output.put_line(num||' Not found');
+        END;
+        dbms_output.put_line('FirstName:'||fname);
+        dbms_output.put_line('Salary:'||sal);
+        dbms_output.put_line('-----');
+
+    END LOOP;
+END;
+/
+
+parameterized Procedures
+-------------------------------
+CREATE OR REPLACE PROCEDURE Updatesal
+As
+BEGIN
+	update Employee Set salary=salary*1.10;
+	commit;
+END;
+/
+
+execute UpdateSal;
+
+CREATE OR REPLACE PROCEDURE Updatesal( eno NUMBER,amt IN NUMBER)
+As
+BEGIN
+	update Employee Set salary=salary+amt where empno=eno;
+	commit;
+END;
+/
+
+
+
+CREATE OR REPLACE PROCEDURE Updatesal( eno NUMBER,ename OUT varchar2)
+As
+BEGIN
+	select FirstName ||' '||LastName into ename from employee where empno=eno;
+END;
+/
+
+declare
+	cname varchar2(20);
+begin
+	getName(101,cname);
+	DBMS_OUTPUT.PUT_LINE(cname);	
+end;
+/
+
+CREATE OR REPLACE PROCEDURE getName( cname IN OUT varchar2)
+As
+BEGIN
+	cname:=UPPER(cname);
+END;
+/
+
+declare
+	cname varchar2(20):='Anand';
+begin
+	getName(cname);
+	DBMS_OUTPUT.PUT_LINE(cname);	
+end;
+/
+
+
+CREATE OR REPLACE FUNCTION getEmptName(eno number)
+RETURN varchar2
+As
+vName varchar2(100);
+BEGIN
+	select FirstName ||' '||LastName into vName from employee where empno=eno;
+	RETURN vName;
+END;
+/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

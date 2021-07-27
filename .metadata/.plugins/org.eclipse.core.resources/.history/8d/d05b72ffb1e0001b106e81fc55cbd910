@@ -1,0 +1,12 @@
+package day2;
+
+import java.time.LocalDate;
+
+public class Enroll {
+	private Student student;
+	private Course course;
+    private LocalDate enrollmentDate;
+ 
+	LocalDate loc=LocalDate.now();
+    System.out.println(loc);
+}

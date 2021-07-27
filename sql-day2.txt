@@ -1,0 +1,30 @@
+create table Department (
+Deptno NUMBER primary key, 
+Deptname VARCHAR(20),
+Location VARCHAR(20)
+);
+create table Employee
+(
+Empno NUMBER primary key, 
+FIRSTNAME VARCHAR(20),
+LASTNAME VARCHAR(20),
+DOJ DATE,
+MANAGER NUMBER,
+SALARY NUMBER,
+DEPTNO NUMBER references Department (DEPTNO)
+);
+INSERT INTO Department values(10,'IT','India');
+INSERT INTO Department values(20,'Sales','China');
+INSERT INTO Department values(30,'HR','India');
+INSERT INTO Department values(40,'Research','UK');
+INSERT INTO Department values(50,'Astronomy','France');
+SELECT * FROM Employee;
+INSERT INTO Employee values(110,'Virat','Kohli','12-NOV-2008',100,34000,10);
+INSERT INTO Employee values(111,'Radha','Madhav','12-DEC-2015',103,15000,20);
+INSERT INTO Employee values(100,'Mark','Waugh','11-OCT-2000',NULL,90000,10);
+INSERT INTO Employee values(101,'Steve','Waugh','11-OCT-2005',100,52500,10);
+INSERT INTO Employee values(103,'Alyssa','Healy','03-MARCH-2008',NULL,80000,20);
+INSERT INTO Employee values(105,'Raman','Mahadev','10-DEC-2005',103,47250,20);
+INSERT INTO Employee values(106,'Dev','Mishra','07-JULY-2015',100,24150,30);
+
+INSERT INTO Employee values(108,'Edin','Brew','04-NOV-2019',NULL,15900,NULL);

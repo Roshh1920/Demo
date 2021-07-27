@@ -1,0 +1,17 @@
+package day1;
+
+
+public class display {
+	void display(Student Student)
+    {
+        System.out.println("Student Info is ");
+        System.out.println("ID "+ Student.getId());
+        System.out.println("Name "+ Student.getName());
+        System.out.println("Dob"+ Student.getDob());
+        System.out.println("City "+ Student.getCollegename());
+        for(int x=0;x<PhoneNo;x++)
+        {
+            System.out.println(""+ PhoneNo]);
+        }
+    }
+}

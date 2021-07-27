@@ -1,0 +1,6 @@
+package assignment1;
+
+public class Savingsaccount extends Account{
+	int minimumbalance;
+	
+}

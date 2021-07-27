@@ -1,0 +1,7 @@
+package Daytwo;
+
+public class demo {
+	public static void main(String[] args) {
+		 String pat = "A001"; 
+	}
+}
